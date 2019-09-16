@@ -1,0 +1,9 @@
+{
+	"IsEncrypted": false,
+	"Values": {
+		"AzureWebJobsStorage": "",
+		"FUNCTIONS_WORKER_RUNTIME": "node",
+		"AzureTableKey": "your-key",
+		"AzureAccountName": "your-account-name"
+	}
+}
