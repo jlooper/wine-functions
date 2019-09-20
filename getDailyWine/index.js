@@ -8,9 +8,10 @@ const tableService = azure.createTableService(
 );
 
 module.exports = function(context) {
-	//get one random wine, based on a random number calculated here
-	var num = Math.floor(Math.random() * 100);
-	var query = new azure.TableQuery().top(1).where('RowKey eq ?', num.toString());
+	//get one random wine, based on the day
+	var date = new Date().getDate();
+
+	var query = new azure.TableQuery().top(1).where('RowKey eq ?', date.toString());
 	tableService.queryEntities('wines', query, null, function(error, result, response) {
 		if (!error) {
 			context.done(null, {
